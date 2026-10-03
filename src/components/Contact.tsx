@@ -16,7 +16,7 @@ export default function Contact() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:sayyedabuzar021@gmail.com"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary hover:bg-primary/90 font-medium transition-all glow-purple"
           >
             <Mail size={18} />
@@ -33,10 +33,9 @@ export default function Contact() {
           </a>
         </div>
 
-        <p className="text-sm text-muted">
-          {/* Replace with real contact details */}
+        {/* <p className="text-sm text-muted">
           Update email and add WhatsApp / LinkedIn links here.
-        </p>
+        </p> */}
       </div>
     </section>
   );
