@@ -1,21 +1,25 @@
 const projects = [
   {
-    title: "Project One",
-    description: "Modern landing page for a SaaS product. Clean design with strong CTAs.",
-    tags: ["Next.js", "Tailwind", "Framer Motion"],
-    link: "#",
+    title: "PDF Editor",
+    description:
+      "Modern web-based PDF editor. Upload, add text, highlight, draw, delete pages, and download the edited PDF — all in the browser.",
+    tags: ["Next.js", "TypeScript", "pdf-lib", "react-pdf", "Tailwind"],
+    live: "https://pdf-editor-alpha-flame.vercel.app/",
+    github: "https://github.com/Abuzar84/pdf-editor",
   },
   {
     title: "Project Two",
     description: "Business website with custom animations and responsive layout.",
     tags: ["React", "TypeScript", "UI Design"],
-    link: "#",
+    live: "#",
+    github: "#",
   },
   {
     title: "Project Three",
     description: "High-converting sales page focused on performance and conversion.",
     tags: ["Next.js", "SEO", "Landing Page"],
-    link: "#",
+    live: "#",
+    github: "#",
   },
 ];
 
@@ -34,9 +38,10 @@ export default function Projects() {
               key={project.title}
               className="group rounded-2xl overflow-hidden bg-surface border border-white/5 hover:border-primary/30 transition-all"
             >
-              {/* Placeholder image area */}
               <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                <span className="text-muted text-sm">Project Preview</span>
+                <span className="text-muted text-sm font-medium">
+                  {project.title}
+                </span>
               </div>
 
               <div className="p-6">
@@ -56,21 +61,32 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  className="text-sm text-secondary hover:underline"
-                >
-                  View Project →
-                </a>
+                <div className="flex items-center gap-4">
+                  {project.live && project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-secondary hover:underline"
+                    >
+                      Live Demo →
+                    </a>
+                  )}
+                  {project.github && project.github !== "#" && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted hover:text-white transition-colors"
+                    >
+                      GitHub →
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
         </div>
-
-        <p className="text-center text-muted text-sm mt-8">
-          {/* Replace with real projects later */}
-          Placeholder projects — replace with your real work.
-        </p>
       </div>
     </section>
   );
